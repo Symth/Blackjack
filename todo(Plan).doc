@@ -1,0 +1,21 @@
+David: Fix the placeholder issue for the username input (DONE)
+
+
+Mike: Fix the issue with user and dealer's hands becoming too long
+
+Justin: Make the messages look more cleaner // structure the messages to become more simpified in to reduce the amount of length in messages by removing unnecessary words.
+
+# ~ ~ Anyone ~ ~ #
+
+# - Make the message better: Hit and Loss
+Make the WIN(Hit) and LOSS (Hit) messages more simpified by making them say "Your chance of winning if you hit is: X" And your chance if losing if you hit is: Y" (Seperate lines for each message)
+
+Example:
+Your chance of winning is x 
+Your chance of busting/losing is y 
+
+OR
+
+You have a x chance to win if you hit
+You have a y chance of losing/busting if you hit
+
