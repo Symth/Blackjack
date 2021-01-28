@@ -10,7 +10,7 @@ def main():
         p_hand = Hand()
         p_hand.add_cards(p_cards)
         print("\n Your Total Diamonds ---> ", p_chips.total)
-        bet_money = int(input(" Enter how many diamonds you want to bet: "))
+        bet_money = int(input(" Enter how many diamonds you want to 0bet: "))
         p_chips.bet = take_bet(bet_money, p_chips.total)
         print("\n")
 
