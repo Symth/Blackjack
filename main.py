@@ -1,23 +1,4 @@
-###############################
-# PROLOG SECTION
-# blackjack.py
-# A blackjack game created in Python
-# (1/25/21)
-# (David Reilly, Justin Chamoun, Mike Gamez)
-# Possible future enhancements: N/A
-# Unresolved bugs: N/A
-###############################
 
-#Game Logic, handles the cards, betting, and win or lose
-# 1 asks player how many diamonds they want to bet and shows your total diamonds.
-# 2 if the amount the player bets is more than the diamonds they have program will ask for another amount.
-# 3 then the game deals the cards for both the player and Herobrine.
-# 4 if the player decides to hit then the program will hand them another card.
-# 5 the player also has the choice to stand, double down, or surrender.
-# 6 the program will give you a message when you either win or bust
-# 7 the program will then show how many diamonds you have left then ask if you want to play again.
-# 8 if the user selects yes it will show a scoreboard that counts how many times you and herobrine have won and tied
-# 9 if the user selects no then the program stops  
 def main():
     p_win, d_win, draw = 0, 0, 0
     greet()
@@ -82,10 +63,7 @@ def main():
         print("\n" + " ".ljust(30, "-"))
 			
 				
-###############################
-# PROCESSING INITIALIZATION SECTION
-###############################
-#This Section defines the cards and thei	
+	
 from random import choices, shuffle
 from os import system, name			
 
@@ -150,7 +128,7 @@ class Deck:
         self.player = choices(self.deck, k=2)
         self.delete_cards(self.player)
         self.dealer = choices(self.deck, k=2)
-        self.delete_cards(self.dealer)  # Delete Drawn Cards
+        self.delete_cards(self.dealer)  
         return self.player, self.dealer
 
     def delete_cards(self, total_drawn):
@@ -212,11 +190,7 @@ def take_bet(bet_amount, player_money):
 
     except TypeError:
         return "Invalid bet amount"
-###############################
-# PROCESSING SECTION
-# Branching code:
-# Looping code:
-###############################
+
 def success_rate(card, obj_h):
     """ Calculate Success rate of 'HIT' new cards """
 
@@ -228,7 +202,7 @@ def success_rate(card, obj_h):
     if rate < 100:
         print(f"[ WIN(hit) : {int(rate)}% | LOSS(hit) : {100-int(rate)}% ]")
     elif rate > 100:
-        l_rate = int(rate - (rate - 99))  # Round to 99
+        l_rate = int(rate - (rate - 99))  
         if card[0][1] == "Ace":
             l_rate -= 99
         print(f"[ WIN(hit) : {100-l_rate}% | LOSS(hit) : {l_rate}% ]")
@@ -238,7 +212,7 @@ def success_rate(card, obj_h):
 
 def hits(obj_de):
     new_card = [obj_de.deal_cards()[0][0]]
-    # obj_h.add_cards(new_card)
+    
     return new_card
 
 hit = "h"
@@ -252,7 +226,7 @@ def blackj_options(p_chips, obj_de, obj_h, dealer_card):
     choice = str(input(f"[ HIT(h) | STAND(st) | SURRENDER(su) | DOUBLE DOWN(dd) ] : ")).lower()
     print("\n")
     if choice == hit:
-        # hits(obj_de, obj_h)
+        
         obj_h.add_cards(next_card)
         show_some(obj_h.cards, dealer_card, obj_h)
 
@@ -284,11 +258,6 @@ def show_some(player_cards, dealer_cards, obj_h):
         print(f"\n {player_name}'s Cards [{obj_h.value}]:\n {player_cards}")
         print(f"\n Herobrine's Cards [{VALUES[dealer_cards[1][1]]}]:\n {[dealer_cards[1]]} \n \n")
 				
-###############################
-# CLEANUP, TERMINATION, and EXIT
-# SECTION
-###############################
-# End game Scenarios (Win/Lose Conditions)
 def player_bust(obj_h, obj_c):
     if obj_h.value > 21:
         obj_c.loss_bet()
@@ -329,8 +298,6 @@ def player_surrender(obj_c):
     return True
 
 
-#######################################
-#Panel Message when game loads to introduce
 
 def clear_screen():
     system("cls" if name == "nt" else "clear")
