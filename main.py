@@ -350,29 +350,28 @@ def greet():
 def greet2(p_count, d_count, draw_c):
     print(" " + "".center(30, "_"))
     print(
-        "|" + "__PLAYER__".ljust(7, " ") + "|",
-        "_Herobrine__".center(7, " ") + "|",
-        "_DRAW__".rjust(7, " ") + "|",
+        "|" + player_name .ljust(20, " ") + "|",
+        "_Herobrine__".center(10, " ") + "|",
+        "_DRAW__".rjust(15, " ") + "|",
         sep="_",
     )
     print(
         "|"
-        + "".center(10, " ")
+        + "".center(15, " ")
         + "|"
-        + "".center(10, " ")
+        + "".center(15, " ")
         + "|"
-        + "".center(8, " ")
+        + "".center(15, " ")
         + "|"
     )
     print(
         "|"
-        + p_count.center(10, "_")
+        + p_count.center(15, "_")
         + "|"
-        + d_count.center(10, "_")
+        + d_count.center(15, "_")
         + "|"
-        + draw_c.center(8, "_")
+        + draw_c.center(15, "_")
         + "|"
     )
-
-
+print("|" {player_name}  {p_count}"")
 main()
